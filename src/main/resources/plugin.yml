@@ -1,0 +1,21 @@
+name: ${project.name}
+main: me.hqm.plugindev.creativeticketreview.CTRPlugin
+version: ${project.version}
+description: ${project.description}
+author: HmmmQuestionMark
+commands:
+    ctr:
+        description: The base command for CTR.
+        usage: /<command> <[info|purge]> {[tickets|points|all|confirm]} {player}
+        aliases: [creativeticketreview]
+    review:
+        description: Submit or review tickets.
+        usage: /<command> <[{player}|submit|list|accept|deny]> {player}
+        aliases: [rev, rv]
+permissions:
+    ctr.submit:
+        default: true
+    ctr.review:
+        default: op
+    ctr.purge:
+        default: false
