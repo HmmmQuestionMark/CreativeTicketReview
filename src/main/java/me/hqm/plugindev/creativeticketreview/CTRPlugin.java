@@ -34,6 +34,9 @@ public class CTRPlugin extends JavaPlugin {
 
     public void onEnable() {
         INST = this;
+        
+        getConfig().options().copyDefaults(true);
+        saveConfig();
 
         loadSQL();
         loadListeners();
@@ -41,9 +44,6 @@ public class CTRPlugin extends JavaPlugin {
 
         Db.open(CTRSetting.DATABASE_URL.getValue()).from(new PlayerModel()).select();
         Db.open(CTRSetting.DATABASE_URL.getValue()).from(new TicketModel()).select();
-
-        getConfig().options().copyDefaults(true);
-        saveConfig();
 
         getLogger().info("Successfully enabled.");
     }
